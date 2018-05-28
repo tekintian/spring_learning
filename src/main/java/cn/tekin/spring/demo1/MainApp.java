@@ -13,20 +13,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
     public static void main(String[] args) {
         //ApplicationContext 方式
-       /* ApplicationContext applicationContext=new ClassPathXmlApplicationContext("Beans.xml");
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld helloWorld= (HelloWorld) applicationContext.getBean("helloWorld");
-        */
 
        //BeanFactory
-        BeanFactory beanFactory=new ClassPathXmlApplicationContext("Beans.xml");
-        HelloWorld helloWorld=(HelloWorld) beanFactory.getBean("helloWorld");
+//        BeanFactory beanFactory=new ClassPathXmlApplicationContext("Beans.xml");
+//        HelloWorld helloWorld=(HelloWorld) beanFactory.getBean("helloWorld");
 
        helloWorld.setMessage("Hi, I am Tekin");
        helloWorld.getMessage();
 
-       HelloWorld helloWorld2 = (HelloWorld) beanFactory.getBean("helloWorld");
-        System.out.println("第二个对象");
-       helloWorld2.getMessage();
+       ((ClassPathXmlApplicationContext) applicationContext).registerShutdownHook();
 
     }
 }
