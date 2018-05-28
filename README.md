@@ -137,7 +137,10 @@ singleton，如下所示：
 
 
 
+## Spring 基于构造函数的依赖注入
+当容器调用带有一组参数的类构造函数时，基于构造函数的 DI 就完成了，其中每个参数代表一个对其他类的依赖。
 
+[源码演示](https://github.com/tekintian/spring_learning/tree/v0.2.0)
 
 ---
 

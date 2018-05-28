@@ -16,15 +16,13 @@ public class MainApp {
         //ApplicationContext 方式
         // ApplicationContext applicationContext=new ClassPathXmlApplicationContext("Beans.xml");
 
-        AbstractApplicationContext context=new ClassPathXmlApplicationContext("Beans.xml");
+       ApplicationContext context=new ClassPathXmlApplicationContext("Beans.xml");
 
-        HelloWorld helloWorld= (HelloWorld) context.getBean("helloWorld");
-
-       helloWorld.setMessage("Hi, I am Tekin");
-       helloWorld.getMessage();
+       TextEditor te= (TextEditor) context.getBean("textEditor");
+      te.spellCheck();
 
        /* 注册一个在 AbstractApplicationContext 类中声明的关闭 hook 的 registerShutdownHook() 方法。它将确保正常关闭，并且调用相关的 destroy 方法。 */
-        context.registerShutdownHook();
+
 
     }
 }
