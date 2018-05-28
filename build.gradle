@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.tekin'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.6.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    compile group: 'org.springframework', name: 'spring-core', version: '5.0.6.RELEASE'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
