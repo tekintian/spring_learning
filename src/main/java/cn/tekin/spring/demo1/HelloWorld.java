@@ -1,10 +1,14 @@
 package cn.tekin.spring.demo1;
 
+/**
+ * Hello world
+ * @author Tekin
+ */
 public class HelloWorld {
    private String message;
 
-    public String getMessage() {
-        return message;
+    public void getMessage() {
+        System.out.println("Your Message : "+message);
     }
 
     public void setMessage(String message) {

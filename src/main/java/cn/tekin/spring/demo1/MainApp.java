@@ -21,7 +21,12 @@ public class MainApp {
         BeanFactory beanFactory=new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld helloWorld=(HelloWorld) beanFactory.getBean("helloWorld");
 
-        System.out.println("message:"+helloWorld.getMessage());
+       helloWorld.setMessage("Hi, I am Tekin");
+       helloWorld.getMessage();
+
+       HelloWorld helloWorld2 = (HelloWorld) beanFactory.getBean("helloWorld");
+        System.out.println("第二个对象");
+       helloWorld2.getMessage();
 
     }
 }
