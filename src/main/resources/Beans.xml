@@ -2,11 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--初始化 bean 的之前和之后实现类-->
-   <bean id="textEditor" class="cn.tekin.spring.demo1.TextEditor">
-       <constructor-arg ref="spellChecker"/>
-   </bean>
 
-    <bean id="spellChecker" class="cn.tekin.spring.demo1.SpellChecker"></bean>
-
+   <bean id="customEventHandler" class="cn.tekin.spring.demo1.CustomEventHandler"></bean>
+<bean id="customEventPublisher" class="cn.tekin.spring.demo1.CustomEventPublisher"></bean>
 </beans>
