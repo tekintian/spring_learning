@@ -158,6 +158,30 @@ PRIMARY KEY ( `id` )
 [JDBC CRUD 操作示例演示](https://github.com/tekintian/spring_learning/tree/v0.4.0)
 
 
+## Spring 中 SQL 的存储过程
+SimpleJdbcCall 类可以被用于调用一个包含 IN 和 OUT 参数的存储过程。你可以在处理任何一个 RDBMS 时使用这个方法，就像 Apache Derby， DB2， MySQL， Microsoft SQL Server， Oracle，和 Sybase。
+
+```sql
+DELIMITER$$
+DROP PROCEDURE IF EXISTS `java_demo`.`getRecord` $$
+
+CREATE PROCEDURE `java_demo`.`getRecord`(
+IN in_id INTEGER,
+OUT out_name VARCHAR(200),
+OUT out_age INTEGER
+)
+
+BEGIN
+	SELECT name,age
+	INTO out_name, out_age
+	FROM student WHERE id=in_id;
+END $$
+
+DELIMITER;
+```
+
+[Spring 中 SQL 的存储过程操作示例演示](https://github.com/tekintian/spring_learning/tree/v0.5.0)
+
 # dependencies
 
 ```gradle
