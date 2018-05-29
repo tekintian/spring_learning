@@ -144,6 +144,21 @@ singleton，如下所示：
 
 ---
 
+## Spring JDBC CRUD 操作示例
+
+```sql
+CREATE TABLE `student` (
+`id` INT ( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT,
+`name` VARCHAR ( 255 ) DEFAULT NULL,
+`age` INT ( 5 ) DEFAULT NULL,
+PRIMARY KEY ( `id` ) 
+) ENGINE = MyISAM AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
+```
+
+
+
+
+
 # dependencies
 
 ```gradle
@@ -158,5 +173,23 @@ singleton，如下所示：
     compile group: 'org.springframework', name: 'spring-orm', version: '5.0.6.RELEASE'
 
 ```
+
+
+## MySQL Connector/J 8.x 连接参数
+
+MySQL Connector/J 8.0.11   JDBC Type 4 driver for MySQL
+
+最新版的 className相对5.x 版本也有所改变
+
+    5.x版本
+    com.mysql.jdbc.Driver
+    8.x版本改为
+    com.mysql.cj.jdbc.Driver
+
+```xml
+jdbc:mysql://localhost:3306/java_demo?useSSL=false&amp;characterEncoding=utf-8&amp;
+useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Hongkong
+```
+
 
 

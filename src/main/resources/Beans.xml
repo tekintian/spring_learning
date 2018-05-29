@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
 
-   <bean id="customEventHandler" class="cn.tekin.spring.demo1.CustomEventHandler"></bean>
-<bean id="customEventPublisher" class="cn.tekin.spring.demo1.CustomEventPublisher"></bean>
+    <!-- Initialization for data source -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3357/java_demo?useSSL=false&amp;characterEncoding=utf-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Hongkong"/>
+        <property name="username" value="java"/>
+        <property name="password" value="java888"/>
+    </bean>
+
+    <!-- Definition for studentJDBCTemplate bean -->
+    <bean id="studentJDBCTemplate"
+          class="cn.tekin.spring.demo1.StudentJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
 </beans>
