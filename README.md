@@ -182,6 +182,25 @@ DELIMITER;
 
 [Spring 中 SQL 的存储过程操作示例演示](https://github.com/tekintian/spring_learning/tree/v0.5.0)
 
+
+## Spring 编程式事务管理
+我们直接使用 PlatformTransactionManager 来实现编程式方法从而实现事务。
+
+- queryForInt 在新版本中已经被弃用，
+
+    String SQL2 = "select max(id) from Student";
+    int sid = JdbcTemplate.queryForInt( SQL2 );
+
+- 需要替换为 queryForObject，方法如下
+
+    String SQL2 = "select max(id) from Student";
+    JdbcTemplate.queryForObject(SQL2, Integer.class);
+
+
+
+
+
+
 # dependencies
 
 ```gradle
