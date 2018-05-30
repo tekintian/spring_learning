@@ -201,22 +201,6 @@ DELIMITER;
 
 
 
-# dependencies
-
-```gradle
-//AOP
-    compile group: 'org.springframework', name: 'spring-aop', version: '5.0.6.RELEASE'
-    //AOP开发框架 aspects
-    compile group: 'org.springframework', name: 'spring-aspects', version: '5.0.6.RELEASE'
-    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.6.RELEASE'
-    compile group: 'org.springframework', name: 'spring-context-support', version: '5.0.6.RELEASE'
-    compile group: 'org.springframework', name: 'spring-messaging', version: '5.0.6.RELEASE'
-    compile group: 'org.springframework', name: 'spring-jms', version: '5.0.6.RELEASE'
-    compile group: 'org.springframework', name: 'spring-orm', version: '5.0.6.RELEASE'
-
-```
-
-
 ## MySQL Connector/J 8.x 连接参数
 
 MySQL Connector/J 8.0.11   JDBC Type 4 driver for MySQL
