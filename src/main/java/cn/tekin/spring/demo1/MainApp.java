@@ -7,10 +7,13 @@ package cn.tekin.spring.demo1;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("Beans.xml");
+
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        //        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("Beans.xml");
         StudentDAO studentJDBCTemplate =
                 (StudentDAO)context.getBean("studentJDBCTemplate");
         System.out.println("------Records creation--------" );
