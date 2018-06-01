@@ -11,14 +11,17 @@
 <head>
     <meta charset="utf-8">
     <title>Spring MVC Hello World Demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<ul>
-    <li><a href="<%=basePath %>hello">Hello demo</a></li>
-    <li><a href="<%=basePath %>hello/p1">Hello p1 demo</a></li>
-</ul>
-
+<div class="container">
+    <ul style="margin-top: 5rem;">
+        <li><a href="<%=basePath %>hello">Hello demo</a></li>
+        <li><a href="<%=basePath %>hello/p1">Hello p1 demo</a></li>
+    </ul>
+</div>
 
 </body>
 </html>
